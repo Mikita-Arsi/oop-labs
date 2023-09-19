@@ -12,10 +12,6 @@ long long int check_num(std::string line) {
    if (num < 0) return -1;
    return num;
 }
-bool compare_nums(long long int num1, long long int num2) {
-   if (num2 <= num1) return false;
-   return true;
-}
 
 long long int bin(long long int num) {
    long long int result{0}, position{1};
@@ -78,6 +74,6 @@ long long int lab0(std::string a, std::string b) {
 
    num2 = check_num(b);
    if (num2 < 0) return num2;
-   if (compare_nums(num1, num2)) return sum_bin(num1, num2);
+   if (num2 > num1) return sum_bin(num1, num2);
    return -2;
 }

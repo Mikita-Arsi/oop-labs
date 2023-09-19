@@ -116,17 +116,6 @@ TEST(Func__check_num__Test, BasicAsExasertions) {
    EXPECT_EQ(check_num("100"), 100);
 }
 
-TEST(Func__compare_nums__Test, BasicAsExasertions) {
-   // arrange
-
-   // act
-
-   // assert
-   EXPECT_EQ(compare_nums(1, 1), false);
-   EXPECT_EQ(compare_nums(2, 1), false);
-   EXPECT_EQ(compare_nums(1, 2), true);
-}
-
 TEST(Func__bin__Test, BasicAsExasertions) {
    // arrange
 
