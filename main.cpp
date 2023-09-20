@@ -3,7 +3,7 @@
 
 int main() {
 
-   std::string a, b;
+   int a, b;
    std::cout << "a: ";
    std::cin >> a;
    std::cout << "b: ";
