@@ -1,57 +1,48 @@
 #include <iostream>
 #include <typeinfo>
 
-long long int check_num(std::string line) {
-   long long int num;
+int search_num(std::string line) {
+   int num;
    try {
       num = std::stoll(line);
-   } catch (const std::exception) {
+   } catch (std::exception) {
       return -3;
    }
 
    if (num < 0) return -1;
+
    return num;
 }
 
-long long int bin(long long int num) {
-   long long int result{0}, position{1};
+int check_nums(int a, int b) {
+   if (a < 0) return a;
+   if (b < 0) return b;
+   if (a >= b) return -2;
 
-   while (num > 0) {
-      result += num % 2 * position;
-      num /= 2;
-      position *= 10;
-   }
-
-   return result;
+   return 1;
 }
 
-long long int count(long long int bin_number) {
-   long long int result{0};
+int pow2(int n) { return 1 << n; }
 
-   while (bin_number) {
-      if (bin_number % 10 == 1) {
-         result += 1;
-         bin_number -= 1;
+int sum_of_units_before(int num) {
+   int result{0};
+
+   for (int power{1}; pow2(power) <= num; power++) {
+      result += num / pow2(power) * (pow2(power - 1));
+      if (num % (pow2(power)) != num % (pow2(power + 1))) {
+         result += num % (pow2(power));
       }
-      bin_number /= 10;
    }
-
    return result;
 }
 
-long long int sum_bin(long long int a, long long int b) {
-
-   long long int sum{0};
-
-   while (a <= b) {
-      sum += count(bin(a));
-      a += 1;
-   }
-
-   return sum;
+int difference(int a, int b) {
+   int check_nums_flag = check_nums(a, b);
+   if (check_nums_flag != 1) return check_nums_flag;
+   return sum_of_units_before(b + 1) - sum_of_units_before(a);
 }
 
-std::string check_error(long long int err_code) {
+std::string raise_err(int err_code) {
    switch (err_code) {
       case -1:
          return "Number must be unsignused";
@@ -67,13 +58,14 @@ std::string check_error(long long int err_code) {
    }
 }
 
-long long int lab0(std::string a, std::string b) {
-   long long int num1, num2;
-   num1 = check_num(a);
-   if (num1 < 0) return num1;
+std::string check_err_code(int res) {
+   if (res < 0) return raise_err(res);
+   return std::to_string(res);
+}
 
-   num2 = check_num(b);
-   if (num2 < 0) return num2;
-   if (num2 > num1) return sum_bin(num1, num2);
-   return -2;
+std::string count_of_units_in_range_of_bin_nums(std::string a, std::string b) {
+   int num1, num2;
+   num1 = search_num(a);
+   num2 = search_num(b);
+   return check_err_code(difference(num1, num2));
 }

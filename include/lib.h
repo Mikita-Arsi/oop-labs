@@ -1,8 +1,10 @@
 #pragma once
 
-long long int check_num(std::string line);
-long long int bin(long long int num);
-long long int count(long long int bin_number);
-long long int sum_bin(long long int a, long long int b);
-std::string check_error(long long int err_code);
-long long int lab0(std::string a, std::string b);
+int search_num(std::string line);
+int check_nums(int a, int b);
+int pow2(int n);
+int sum_of_units_before(int num);
+int difference(int a, int b);
+std::string raise_err(int err_code);
+std::string check_err_code(int res);
+std::string count_of_units_in_range_of_bin_nums(std::string a, std::string b);
