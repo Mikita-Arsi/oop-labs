@@ -8,6 +8,6 @@ int main() {
    std::cin >> a;
    std::cout << "b: ";
    std::cin >> b;
-   std::cout << count_of_units_in_range_of_bin_nums(a, b) << std::endl;
+   std::cout << count_of_non_zero_bits_in_range(a, b) << std::endl;
    return 0;
 }

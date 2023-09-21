@@ -7,7 +7,7 @@ TEST(ExampleTest, BasicAsExasertions) {
    int a{2}, b{7}, res;
 
    // act
-   res = count_of_units_in_range_of_bin_nums(a, b);
+   res = count_of_non_zero_bits_in_range(a, b);
 
    // assert
    EXPECT_EQ(res, 11);
@@ -19,7 +19,7 @@ TEST(NegativeErrTest_a, BasicAsExasertions) {
 
    // act
    try {
-      res = count_of_units_in_range_of_bin_nums(a, b);
+      res = count_of_non_zero_bits_in_range(a, b);
    } catch (std::invalid_argument const& err) {
       // assert
       EXPECT_EQ(err.what(), std::string("Number must be unsignused"));
@@ -34,7 +34,7 @@ TEST(NegativeErrTest_b, BasicAsExasertions) {
 
    // act
    try {
-      res = count_of_units_in_range_of_bin_nums(a, b);
+      res = count_of_non_zero_bits_in_range(a, b);
    } catch (std::invalid_argument const& err) {
       // assert
       EXPECT_EQ(err.what(), std::string("Number must be unsignused"));
@@ -49,7 +49,7 @@ TEST(CompareErrTest, BasicAsExasertions) {
 
    // act
    try {
-      res = count_of_units_in_range_of_bin_nums(a, b);
+      res = count_of_non_zero_bits_in_range(a, b);
    } catch (std::out_of_range const& err) {
       // assert
       EXPECT_EQ(err.what(),
@@ -111,6 +111,18 @@ TEST(Func__pow2__Test, BasicAsExasertions) {
    EXPECT_EQ(pow2(1), 2);
    EXPECT_EQ(pow2(2), 4);
    EXPECT_EQ(pow2(3), 8);
+}
+
+TEST(Func__not_equal_reminder__Test, BasicAsExasertions) {
+   // arrange
+
+   // act
+
+   // assert
+   EXPECT_EQ(not_equal_reminder(11, 1), true);
+   EXPECT_EQ(not_equal_reminder(11, 2), false);
+   EXPECT_EQ(not_equal_reminder(8, 2), false);
+   EXPECT_EQ(not_equal_reminder(8, 3), true);
 }
 
 TEST(Func__calculating_the_range_difference__Test, BasicAsExasertions) {
