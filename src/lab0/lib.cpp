@@ -37,7 +37,7 @@ void validate_nums(const int a, const int b) {
    }
 }
 
-int count_of_non_zero_bits_in_range(int a, int b) {
+int count_of_non_zero_bits_in_range(const int a, const int b) {
    validate_nums(a, b);
    return calculating_the_range_difference(a, b + 1);
 }
