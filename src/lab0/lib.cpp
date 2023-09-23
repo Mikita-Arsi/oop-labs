@@ -17,7 +17,6 @@ int add_iteration(int num, int power) {
 
 int calculating_the_range_difference(int a, int b) {
    int result_a{0}, result_b{0};
-
    for (int power{1}; pow2(power) <= b; power++) {
       if (pow2(power) <= a) {
          result_a += add_iteration(a, power);
