@@ -28,7 +28,7 @@ int calculating_the_range_difference(int a, int b) {
 
 void validate_nums(int a, int b) {
    if (a < 0 || b < 0) {
-      throw std::invalid_argument("Number must be unsignused");
+      throw std::invalid_argument("Invalid input, number must be unsignused");
    }
    if (a >= b) {
       throw std::out_of_range("Number \"b\" must be more than number \"a\"");

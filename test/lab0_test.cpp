@@ -21,7 +21,8 @@ TEST(NegativeErrTest_a, BasicAsExasertions) {
       res = count_of_non_zero_bits_in_range(a, b);
    } catch (std::invalid_argument const& err) {
       // assert
-      EXPECT_EQ(err.what(), std::string("Number must be unsignused"));
+      EXPECT_EQ(err.what(),
+                std::string("Invalid input, number must be unsignused"));
    } catch (...) {
       FAIL() << "Expected std::invalid_argument";
    }
@@ -36,7 +37,8 @@ TEST(NegativeErrTest_b, BasicAsExasertions) {
       res = count_of_non_zero_bits_in_range(a, b);
    } catch (std::invalid_argument const& err) {
       // assert
-      EXPECT_EQ(err.what(), std::string("Number must be unsignused"));
+      EXPECT_EQ(err.what(),
+                std::string("Invalid input, number must be unsignused"));
    } catch (...) {
       FAIL() << "Expected std::invalid_argument";
    }
@@ -65,7 +67,8 @@ TEST(Func__validate_nums__NegativeErrTest_a, BasicAsExasertions) {
       validate_nums(a, b);
    } catch (std::invalid_argument const& err) {
       // assert
-      EXPECT_EQ(err.what(), std::string("Number must be unsignused"));
+      EXPECT_EQ(err.what(),
+                std::string("Invalid input, number must be unsignused"));
    } catch (...) {
       FAIL() << "Expected std::invalid_argument";
    }
@@ -79,7 +82,8 @@ TEST(Func__validate_nums__NegativeErrTest_b, BasicAsExasertions) {
       validate_nums(a, b);
    } catch (std::invalid_argument const& err) {
       // assert
-      EXPECT_EQ(err.what(), std::string("Number must be unsignused"));
+      EXPECT_EQ(err.what(),
+                std::string("Invalid input, number must be unsignused"));
    } catch (...) {
       FAIL() << "Expected std::invalid_argument";
    }
