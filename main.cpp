@@ -1,10 +1,4 @@
 #include <iostream>
+#include "Decimal.h"
 
-#include "lib.h"
-
-using namespace std;
-
-int main() {
-    cout << "Bruh: " << endl
-         << A() << endl;
-}
+int main() { return 0; }
